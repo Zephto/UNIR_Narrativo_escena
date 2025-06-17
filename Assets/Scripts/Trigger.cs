@@ -5,11 +5,13 @@ public class Trigger : MonoBehaviour
 	public EnemyFollow enemy;
 	private bool cinematicActivated = false;
 
-	void OnCollisionEnter(Collision collision)
+	void OnTriggerEnter(Collider other)
 	{
 		if (cinematicActivated) return;
 
-		if (collision.gameObject.CompareTag("Player"))
+		Debug.Log("Que empiece la cinematica");
+
+		if (other.CompareTag("Player"))
 		{
 			cinematicActivated = true;
 			enemy.FollowPlayer();
