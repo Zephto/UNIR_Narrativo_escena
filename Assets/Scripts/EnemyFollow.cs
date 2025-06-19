@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.InputSystem;
 
 public class EnemyFollow : MonoBehaviour
 {
@@ -96,6 +97,9 @@ public class EnemyFollow : MonoBehaviour
 			Debug.Log("Muerto");
 			screamMan.SetActive(true);
 			finalCanvas.SetActive(true);
+
+			Cursor.visible = true;
+			Cursor.lockState = CursorLockMode.None;
 
 			// Destroy(other.gameObject);
 			Destroy(this.gameObject);
